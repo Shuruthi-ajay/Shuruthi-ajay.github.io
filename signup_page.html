@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" type="image/x-icon" href="chef.png">
+    <link rel="stylesheet" href="signupstyle.css">
+</head>
+<body>
+    <div class="sign-container">
+     <h3> Sign Up </h3>
+        <form id="login">
+            <input type="text" placeholder="Username" required>
+            <input type="text" placeholder="Name" required>
+            <input type="password" placeholder="Password" required>
+            <input type="number" placeholder="Age" required>
+            <br><br>
+            <button type="reset">Reset</button>
+            <br><br>
+            <button type="submit" id="loginButton()" onclick="gotohome()">Sign Up</button><br><br>
+            <button onclick="goback()">Back</button>
+        </form>
+    </div>
+    <script>
+
+        function gotohome(){
+            window.location.href = "login_page.html";
+        }
+
+        function goback(){
+            window.location.href = "login_page.html";
+        }
+
+    </script>
+</body>
+</html>

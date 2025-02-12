@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="icon" type="image/x-icon" href="chef.png">
+  <style>
+    body {
+      background-image: url("back.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .button-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding-left: 600px;
+      padding-top: 300px;
+      padding-bottom: 300px;
+    }
+
+    button {
+      background-color: #ffcace;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      width: 140px;
+      height: 50px;
+      color: rgb(70, 16, 120);
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #dbb7cd;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button id="play-btn" onclick="playGame()">PLAY</button>
+    <button onclick="showInstructions()">INSTRUCTIONS</button>
+    <button onclick="back()">LOGOUT</button>
+  </div>
+
+  <div class="popup" id="instructionBox">
+    <h2>Instructions</h2>
+    <p>1. Read the customer's request carefully.</p>
+    <p>2. Decide if the request is good or bad.</p>
+    <p>3. Click "Submit" if it's a good request or "Reject" if it's bad.</p>
+    <p>4. Earn points for correct decisions and lose lives for incorrect ones.</p>
+    <button onclick="closeInstructions()">Back</button>
+  </div>
+
+  <script>
+    function showInstructions() {
+      document.getElementById('instructionBox').style.display = 'block';
+    }
+
+    function closeInstructions() {
+      document.getElementById('instructionBox').style.display = 'none';
+    }
+
+    function playGame() {
+      window.location.href = 'game.html';
+    }
+
+    function back() {
+      window.location.href = 'login_page.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-image: url("game_page.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+#game-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  border-radius: 10px;
+  background-image: url("game_page_pic.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#lives {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+}
+
+.heart {
+  margin: 0 5px;
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+}
+
+#pause-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 200;
+  cursor: pointer;
+  padding:10px;
+  padding-left:10px;
+  padding-right: 10px;
+  background-color: #320539;
+  color: rgb(254, 250, 250);
+  border: none;
+  border-radius: 100%;
+}
+
+#pause-btn:hover {
+  background-color: #6e1a7b;
+}
+
+#game-screen {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#customer {
+  position: relative;
+}
+
+#customer img {
+  width: 100%;
+}
+
+#request-dots {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#request-dialog {
+  position: absolute;
+  bottom: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dbb7cd;
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  width: 20%;
+}
+
+#request-dialog p {
+  margin: 0 0 10px 0;
+}
+
+#submit-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50px;
+}
+
+#submit-btn:hover {
+  background-color: #45a049;
+}
+
+#reject-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+#reject-btn:hover {
+  background-color: #e53935;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #dbb7cd;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 10%;
+}
+
+.popup button {
+  margin: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #4e4e5f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.popup button:hover {
+  background-color: #5e5e6f;
+}
+
+#wrong-move-message {
+  display: none;
+  color: red;
+  margin-top: 10px;
+}
+
+#how-to-play-btn, #play-btn {
+  background-color: #ffcace;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 130px;
+  height: 50px;
+}
+
+#how-to-play-btn:hover, #play-btn:hover {
+  background-color: #ffaabb;
+}
+
+.input-btn {
+  position: absolute;
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-btn:hover {
+  background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#input-btn-1 {
+  left: 350px;
+  top: 472x;
+}
+
+#input-btn-2 {
+  left: 550px;
+  top: 0px;
+}
+
+#input-btn-3 {
+  left: 750px;
+  top: 0px;
+}
+
+#message {
+  color: red;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 50px;
+}
+

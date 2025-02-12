@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Game</title>
+  <link rel="icon" type="image/x-icon" href="chef.png">
+  <link rel="stylesheet" href="openstyle.css">
+  <style>
+    #message {
+      color: red;
+      font-size: 24px;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="game-container" style="display: block;">
+    <div id="lives">
+      <span class="heart"><img src="digital.png" height="50px" width="50px"></span>
+      <span class="heart"><img src="digital.png" height="50px" width="50px"></span>
+      <span class="heart"><img src="digital.png" height="50px" width="50px"></span>
+    </div>
+    <div id="score">Score: 0</div>
+    <button id="pause-btn" onclick="pausegame()">| |</button>
+    <div id="game-screen">
+        <div id="customer">
+          <button id="input-btn-1" onclick="genReq()" class="input-btn">❗</button>
+          <button id="input-btn-2" onclick="genReq()" class="input-btn">❗</button>
+          <button id="input-btn-3" onclick="genReq()" class="input-btn">❗</button>
+        </div>
+    </div>
+    <div id="request-dialog" class="popup">
+      <h2>Request</h2>
+      <p id="request-text"></p>
+      <button id="submit-btn" onclick="handleReqacc()">Accept</button>
+      <button id="reject-btn" onclick="handleReqrej()">Reject</button>
+    </div>
+    <div id="pause-popup" class="popup">
+      <p>Paused</p>
+      <button id="resume-btn" onclick="gogame()">Resume</button>
+      <button id="main-menu-btn" onclick="gomm()">Main Menu</button>
+    </div>
+    <div id="game-over-popup" class="popup">
+      <p>Game Over!</p>
+      <p id="final-score">Score: 0</p>
+      <button id="game-over-main-menu-btn" onclick="gomm()">Main Menu</button>
+    </div>
+    <div id="message" style="display: none;">Oops! Wrong Option</div>
+  </div>
+
+  <script>
+  let lives = 3;
+  let score = 0;
+  let reqnum;
+
+  const requests = [
+    { type: 'good', text: 'Install a trusted antivirus.', hint: 'From a verified vendor.',ans:'accept' },
+    { type: 'bad', text: 'Click this link for a free prize!', hint: 'Unknown source. Proceed with caution.',ans:'reject' },
+    { type: 'good', text: 'Allow access to a known website.', hint: 'Safe and secure.',ans:'accept' },
+    { type: 'bad', text: 'Grant unnecessary permissions.', hint: 'Suspicious request.',ans:'reject' },
+  ];
+
+
+    function startGame() {
+      lives = 3;
+      score = 0;
+      document.getElementById('request-dialog').style.display='none';
+      document.getElementById('game-container').style.display='block';
+      document.getElementById('game-over-popup').style.display='none';
+    }
+
+    function pausegame() {
+      document.getElementById('pause-popup').style.display = 'block';
+    }
+
+    function gogame() {
+      document.getElementById('pause-popup').style.display = 'none';
+      document.getElementById('request-dialog').style.display = 'none';
+    }
+
+    function gomm(){
+      window.location.href = "open_page.html";
+    }
+
+    function genReq()
+    {
+      reqnum=Math.floor(Math.random()*requests.length)
+      const randomRequest = requests[reqnum];
+      let disp=requests[reqnum].text;
+      document.getElementById('request-text').innerHTML=disp;
+      document.getElementById('request-dialog').style.display = 'block';
+    }
+
+    function handleReqacc()
+    {
+      if (requests[reqnum].ans=='accept'){
+        score+=10;
+        document.getElementById('score').innerHTML='Score: '+score;
+        document.getElementById('request-dialog').style.display = 'none';
+      }
+      else{
+          loselife();
+        }
+      }
+
+    function handleReqrej()
+    {
+      if (requests[reqnum].ans=='reject'){
+        score+=10;
+        document.getElementById('score').innerHTML='Score: '+score;
+        document.getElementById('request-dialog').style.display = 'none';
+      }
+      else{
+        loselife();
+      }
+    }
+
+    function loselife()
+    {
+        lives--;
+        document.getElementById('message').style.display = 'block';
+        setTimeout(() => { document.getElementById('message').style.display = 'none'; }, 2000);
+        document.getElementById('request-dialog').style.display = 'none';
+        updateLivesDisplay();
+
+        if (lives==0)
+        {
+          endgame();
+        }
+    }
+
+    function updateLivesDisplay() {
+      const hearts = document.querySelectorAll('.heart');
+      for (let i = 0; i < hearts.length; i++) { 
+        if (i < lives) {
+          hearts[i].style.display = 'inline';  
+        }
+
+        else{
+          hearts[i].style.display = 'none'; 
+        }
+      }
+}
+
+
+    function endgame(){
+      document.getElementById('game-over-popup').style.display = 'block';
+      document.getElementById('final-score').innerHTML='Score: '+score;
+      document.getElementById('request-dialog').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
+
+
+
+  

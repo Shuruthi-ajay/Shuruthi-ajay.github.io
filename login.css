@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #CC6FE6,#E0BDDF); 
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    background: #944ba8;
+    border-color: #85478a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    color: white;
+    width: 400px;
+    font-family: "American Typewriter";
+}
+
+.login-container h3{
+    font-size: 2em;
+}
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    width: 50%;
+    padding: 10px;
+    background: #f59aa4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background:#f2e7e8;
+}
+
+#signup1
+{
+    width: 25%
+}
